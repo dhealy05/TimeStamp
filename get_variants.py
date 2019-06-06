@@ -21,49 +21,6 @@ ALT_VARIANT_PATH = "/home/ec2-user/Birdcoin/data/variants/"
 
 LOCAL_VARIANTS_PATH = './variants/'
 
-def get_complete_variant(type, name, index_string, start_date, date = datetime.now()):
-
-    date_string = date.strftime("%-m_%-d_%Y")
-
-    frames = []
-
-    ec2_path = ALT_VARIANT_PATH
-
-    while date_string != start_date:
-    #not inclusive of start date
-
-        date = subtract_day(date)
-        date_string = date.strftime("%-m_%-d_%Y")
-
-        if date_string == "3/12/2019":
-            ec2_path = VARIANT_PATH
-
-        df = get_variant_df(type, name, index_string, date_string, ec2_path)
-        frames.insert(0, df)
-
-    return pd.concat(frames)
-
-def subtract_day(date):
-    day_minus_one = date - timedelta(1)
-    return day_minus_one
-
-def get_filename(type, name, index_string, date):
-    return type + "_" + name + "_" + index_string + "_" + date + ".csv"
-
-def get_path(type, date_string, ec2_path):
-    return LOCAL_VARIANTS_PATH + type + "/" + date_string + ec2_path + type + "/"
-
-def get_variant_df(type, name, index_string, date, ec2_path):
-
-    path = get_path(type, date, ec2_path) + get_filename(type, name, index_string, date)
-
-    df = pd.DataFrame()
-
-    if os.path.exists(path):
-        df = pd.read_csv(path)
-
-    return df
-
 def get_all_variants(type, strings = ['pred', 'readjusted_index_unadjusted', 'index', 'readjusted_index'], start_date = "2_9_2019", include_fixed = False):
 
     names = ['readjusted_average', 'readjusted_median', 'readjusted_average_index_3',
@@ -95,3 +52,46 @@ def get_all_variants(type, strings = ['pred', 'readjusted_index_unadjusted', 'in
                 name_array.append(full_name)
 
     return df_array, name_array
+
+def get_complete_variant(type, name, index_string, start_date = "2_9_2019", date = datetime.now()):
+
+    date_string = date.strftime("%-m_%-d_%Y")
+
+    frames = []
+
+    ec2_path = ALT_VARIANT_PATH
+
+    while date_string != start_date:
+    #not inclusive of start date
+
+        date = subtract_day(date)
+        date_string = date.strftime("%-m_%-d_%Y")
+
+        if date_string == "3_13_2019":
+            ec2_path = VARIANT_PATH
+
+        df = get_variant_df(type, name, index_string, date_string, ec2_path)
+        frames.insert(0, df)
+
+    return pd.concat(frames)
+
+def get_variant_df(type, name, index_string, date, ec2_path):
+
+    path = get_path(type, date, ec2_path) + get_filename(type, name, index_string, date)
+
+    df = pd.DataFrame()
+
+    if os.path.exists(path):
+        df = pd.read_csv(path)
+
+    return df
+
+def subtract_day(date):
+    day_minus_one = date - timedelta(1)
+    return day_minus_one
+
+def get_filename(type, name, index_string, date):
+    return type + "_" + name + "_" + index_string + "_" + date + ".csv"
+
+def get_path(type, date_string, ec2_path):
+    return LOCAL_VARIANTS_PATH + type + "/" + date_string + ec2_path + type + "/"
