@@ -121,7 +121,7 @@ def animate_catch(array, sentinel = 0, frame_rate = 100, normal = True):
             #plt.plot(fixed)
             #plt.plot(animated)
 
-    ani = animation.FuncAnimation(fig, animate, fargs = (array, sentinel,), frames = len(array[0]) / frame_rate, save_count = len(array[0]) / frame_rate, repeat=False)
+    ani = animation.FuncAnimation(fig, animate, fargs = (array, sentinel,), frames = int(len(array[0]) / frame_rate), save_count = int(len(array[0]) / frame_rate), repeat=False)
     #ani.save(TAB_PATH + 'BTC_price_vs_preds_MA.mp4', writer=writer)
     plt.show()
 
