@@ -24,7 +24,7 @@ def animate_ma(index_string, variant = '', ma_frames = 96*10, days_offset = 0, m
     comparison, times, prices = df['index'].values, df['times'].values, df['price'].values
 
     mas = get_ma(comparison, ma_frames, median)
-    mas, prices, sentinel = adjust_arrays(mas, prices, ma_frames)
+    #mas, prices, sentinel = adjust_arrays(mas, prices, ma_frames)
 
     if days_offset > 0:
         prices = prices[0:len(prices)-days_offset*96]
@@ -44,7 +44,7 @@ def plot_ma(index_string, variant = '', ma_frames = 96*10, days_offset = 0, medi
     comparison, times, prices = df['index'].values, df['times'].values, df['price'].values
 
     mas = get_ma(comparison, ma_frames, median)
-    mas, prices, sentinel = adjust_arrays(mas, prices, ma_frames)
+    #mas, prices, sentinel = adjust_arrays(mas, prices, ma_frames)
 
     total_offset = days_offset * 96
 
