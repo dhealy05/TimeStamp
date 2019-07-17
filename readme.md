@@ -6,6 +6,7 @@ To easily use this package, you will probably need to:
 2. pipenv shell
 3. pipenv install pandas
 4. pipenv install matplotlib
+
 It may work by default if you have an existing python environment.
 
 The basic suite of commands is in run_commands.py. This includes simulating
