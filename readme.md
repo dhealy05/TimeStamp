@@ -6,7 +6,7 @@ TradeBot is a two tiered system to
 1. <strong>predict</strong> the direction Bitcoin prices will go in the future and
 2. <strong>trade</strong> on those predictions for profit.
 
-Since February 11, we've made predictions in real time every 15 minutes,
+Since February 11, we've made predictions in <strong>real time</strong> every 15 minutes,
 recorded and and <strong>time stamped</strong> the results. This repo has the time stamped files so
 you can examine the results yourself.
 
@@ -28,10 +28,10 @@ read <strong>Backtesting.pdf</strong>, which shows the simulated results for 201
 
 <strong>Highlights</strong>: a forward walk based on the full set of predictions yielded a 3% loss in BTC/USD
 and an 11% gain in ETH/USD, in contrast to a market loss of 65% and 80%. That's
-a relative performance of <strong>277</strong> and <strong>556</strong> 🤑.
+a relative performance of <strong>277%</strong> and <strong>556%</strong> 🤑.
 
 A hindsight best path for the same predictions would have <strong>gained 68% and 56%
-respectively</strong>--but hindsight is 20/20 🤓.
+respectively</strong>.
 
 Finally, to get a feel for how we came to this data--our methodology--read
 <strong>TechnicalPresentation.pdf</strong>. It has a more in depth look at the techniques
