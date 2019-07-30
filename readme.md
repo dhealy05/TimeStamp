@@ -1,30 +1,43 @@
-Results:
+<h2>Introducing TradeBot</h2>
 
-Predictions made in real time over 6 months consistently anticipate
-price. You can recreate those results with the OpenTimeStamps files included
-here and the scripts in this repo.
+Hello there 👋! Thanks for your interest in <strong>TradeBot</strong> by Dan Healy. There’s a lot of information here; I’ll walk you through it.
 
-A set of 32 trading strategies based on those predictions underperformed Bitcoin
-overall, but some have started to outperform as the sample size has increased.
+TradeBot is a two tiered system to 1. <strong>predict</strong> the direction Bitcoin prices will go
+in the future and 2. <strong>trade</strong> on those predictions for profit.
 
-Average relative performance divided by average relative standard deviation is
-1.15, implying a 15% higher return per volatility.
+Since February 11, we've made predictions in real time every 15 minutes,
+recorded and and <strong>time stamped</strong> the results. This repo has the time stamped files so
+you can examine the results yourself.
 
-In backtesting, from 12/1/17 to 1/1/19, a forward walk based on relative frequency
-search for the full set of predictions yielded a 3% loss in BTC/USD and an 11%
-gain in ETH/USD, in contrast to a market loss of 65% and 80% for BTC and ETH
-respectively. Backtesting raw data is not included in this repo.
+Predictions made in that time consistently anticipate price.
+You can animate the change in price vs the change in predictions using the
+"animate_ma" command in run_commands.py.
 
-For a detailed description of results in production, read "PredictingBitcoin.pdf".
-As a followup, for volatility metrics, read "Volatility.pdf".
+Results and data analysis are described in <strong>PredictingBitcoin.pdf</strong>. Highlights:
+the highest performing strategy variant made a <strong>return of 162% </strong> 📈, outperforming Bitcoin.
 
-For a detailed description of backtesting results, read "Backtesting.pdf"
+If you're interested in volatility, look at <strong>Volatility.pdf</strong> for a follow up. Highlights: Average relative performance divided by average relative standard deviation is
+1.15, implying a </strong>15% higher</strong> return per volatility.
 
-For a detailed description of technical methods, read "TechnicalPresentation.pdf".
+If you're skeptical of these results--who doesn't make money in a bull market?--
+read </strong>Backtesting.pdf</strong>, which shows the simulated results for 2018.
+Highlights: a forward walk based on the full set of predictions yielded a 3% loss in BTC/USD
+and an 11% gain in ETH/USD, in contrast to a market loss of 65% and 80%. That's
+a relative performance of <strong>277</strong> and <strong>556</strong> 🤑.
+A hindsight best path for the same predictions would have gained 68% and 56%
+respectively--but hindsight is 20/20 🤓.
 
-Usage:
+Finally, to get a feel for how we came to this data--our methodology--read
+<strong>TechnicalPresentation.pdf</strong>. It has a more in depth look at the techniques
+we use to predict and analyze the data.
+
+For a walk through the presentation, or questions about any of the above, email
+me at <strong>daniel.healy05@gmail.com.</strong>
+
+<h2>Usage:</h2>
 
 To easily use this package, you will probably need to:
+
 1. Install pipenv--pip install pipenv
 2. pipenv shell
 3. pipenv install pandas
