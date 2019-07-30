@@ -2,35 +2,36 @@
 
 Hello there 👋! Thanks for your interest in <strong>TradeBot</strong> by <strong>Dan Healy</strong>.
 
-TradeBot is a two tiered system to 1. <strong>predict</strong> the direction Bitcoin prices will go
-in the future and 2. <strong>trade</strong> on those predictions for profit.
+TradeBot is a two tiered system to
+1. <strong>predict</strong> the direction Bitcoin prices will go in the future and
+2. <strong>trade</strong> on those predictions for profit.
 
 Since February 11, we've made predictions in real time every 15 minutes,
 recorded and and <strong>time stamped</strong> the results. This repo has the time stamped files so
 you can examine the results yourself.
 
-Predictions made in that time consistently anticipate price.
+Predictions made in that time <strong>consistently anticipate price</strong>.
 You can animate the change in price vs the change in predictions using the
 "animate_ma" command in run_commands.py.
 
 Results and data analysis are described in <strong>PredictingBitcoin.pdf</strong>.
 
-Highlights: the highest performing strategy variant made a <strong>return of 162% </strong> 📈, outperforming Bitcoin.
+<strong>Highlights</strong>: the highest performing strategy variant made a <strong>return of 162% </strong> 📈, outperforming Bitcoin.
 
 If you're interested in volatility, look at <strong>Volatility.pdf</strong> for a follow up.
 
-Highlights: Average relative performance divided by average relative standard deviation is
+<strong>Highlights</strong>: Average relative performance divided by average relative standard deviation is
 1.15, implying a <strong>15% higher</strong> return per volatility.
 
 If you're skeptical of these results--who doesn't make money in a bull market?--
 read <strong>Backtesting.pdf</strong>, which shows the simulated results for 2018.
 
-Highlights: a forward walk based on the full set of predictions yielded a 3% loss in BTC/USD
+<strong>Highlights</strong>: a forward walk based on the full set of predictions yielded a 3% loss in BTC/USD
 and an 11% gain in ETH/USD, in contrast to a market loss of 65% and 80%. That's
 a relative performance of <strong>277</strong> and <strong>556</strong> 🤑.
 
-A hindsight best path for the same predictions would have gained 68% and 56%
-respectively--but hindsight is 20/20 🤓.
+A hindsight best path for the same predictions would have <strong>gained 68% and 56%
+respectively</strong>--but hindsight is 20/20 🤓.
 
 Finally, to get a feel for how we came to this data--our methodology--read
 <strong>TechnicalPresentation.pdf</strong>. It has a more in depth look at the techniques
