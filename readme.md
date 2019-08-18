@@ -16,12 +16,12 @@ You can animate the change in price vs the change in predictions using the
 
 Results and data analysis are described in <strong>PredictingBitcoin.pdf</strong>.
 
-<strong>Highlights</strong>: the highest performing strategy variant made a <strong>return of 162% </strong> 📈, outperforming Bitcoin.
+<strong>Highlights</strong>: the highest performing strategy variant made a <strong>return of 186% </strong> 📈, outperforming Bitcoin by 3%.
 
 If you're interested in volatility, look at <strong>Volatility.pdf</strong> for a follow up.
 
 <strong>Highlights</strong>: Average relative performance divided by average relative standard deviation is
-1.15, implying a <strong>15% higher</strong> return per volatility.
+1.11, implying a <strong>11% higher</strong> return per volatility.
 
 If you're skeptical of these results--who doesn't make money in a bull market?--
 read <strong>Backtesting.pdf</strong>, which shows the simulated results for 2018.
@@ -33,9 +33,13 @@ a relative performance of <strong>277%</strong> and <strong>556%</strong> 🤑.
 A hindsight best path for the same predictions would have <strong>gained 68% and 56%
 respectively</strong>.
 
-Finally, to get a feel for how we came to this data--our methodology--read
+To get a feel for how we came to this data--our methodology--read
 <strong>TechnicalPresentation.pdf</strong>. It has a more in depth look at the techniques
 we use to predict and analyze the data.
+
+Finally, <strong>correlation.mp4</strong> shows the scatterplot of relative frequency of prediction
+vs change in price, over 30 days. Take a look to see the <strong>direct relationship</strong>
+between predictions and price change.
 
 For a walk through the presentation, or questions about any of the above, email
 me at <strong>daniel.healy05@gmail.com.</strong>
