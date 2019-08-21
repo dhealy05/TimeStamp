@@ -16,7 +16,7 @@ You can animate the change in price vs the change in predictions using the
 
 Results and data analysis are described in <strong>PredictingBitcoin.pdf</strong>.
 
-<strong>Highlights</strong>: the highest performing strategy variant made a <strong>return of 186% </strong> 📈, outperforming Bitcoin by 3%.
+<strong>Highlights</strong>: the highest performing strategy variant made a <strong>return of 186% </strong> 📈, outperforming Bitcoin by 4%.
 
 If you're interested in volatility, look at <strong>Volatility.pdf</strong> for a follow up.
 
