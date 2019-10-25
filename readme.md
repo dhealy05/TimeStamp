@@ -14,18 +14,15 @@ The primary strategy has made a <strong>return of 176.25%</strong>,
 a <strong>50% higher</strong> return than Bitcoin, with <strong>10% lower volatility.</strong>
 
 If you're skeptical of these results--who doesn't make money in a bull market?--
-read <strong>Backtesting.pdf</strong>, which shows the simulated results for 2018.
+we performed walk forward tests for Bitcoin and Ether for the year 2018,
+when BTC lost 65% of its value and ETH lost 80% of its value.
 
-<strong>Highlights</strong>: a forward walk based on the full set of predictions yielded a 3% loss in BTC/USD
-and an 11% gain in ETH/USD, in contrast to a market loss of 65% and 80%. That's
-a relative performance of <strong>277%</strong> and <strong>556%</strong> 🤑.
+<strong>The results</strong>: a 3% loss in BTC and an 11% gain in ETH.
+That's a relative performance of <strong>277%</strong> and <strong>556%</strong> 🤑.
 
-For more detailed analysis of real time performance up to August 27, read
-<strong>PredictingBitcoin.pdf</strong>.
-
-To get a feel for how we came to this data--our methodology--read
-<strong>TechnicalPresentation.pdf</strong>. It has a more in depth look at the techniques
-we use to predict and analyze the data.
+Detailed supplementary analysis is available in <strong>PredictingBitcoin.pdf</strong>,
+<strong>Backtesting.pdf</strong>, and <strong>Volatility.pdf</strong>. Our technical
+methods are described in <strong>TechnicalPresentation.pdf</strong>.
 
 Finally, <strong>correlation.mp4</strong> shows the scatterplot of relative frequency of prediction
 vs change in price, over 30 days. Take a look to see the <strong>direct relationship</strong>
