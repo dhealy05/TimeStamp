@@ -40,18 +40,12 @@ def simulate(preds, times, price, buy_thresh = 1, sell_thresh = 0, buy_price = 0
 
     last_price, last_frame, sell_price = 0, 0, 0
 
-    trade_strings, is_invested_array, adjusted_preds, expected_prices = [], [], [], []
+    trade_strings, is_invested_array, expected_prices = [], [], []
     moving_wallets, fixed_wallets = [100], [100]
 
-    min_range = min(len(preds), len(times))
-
-    for i in range(min_range):
+    for i in range(len(preds)):
 
         adjusted_pred = preds[i]
-
-        if (buy_thresh - sell_thresh) != 0:
-            adjusted_pred = (preds[i] - sell_thresh) / (buy_thresh - sell_thresh)
-            adjusted_preds.append(adjusted_pred)
 
         if is_invested:
             current_wallet = fixed_wallets[len(fixed_wallets)-1] * (price[i] / buy_price)

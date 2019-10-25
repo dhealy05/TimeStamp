@@ -10,18 +10,8 @@ Since February 11, we've made predictions in <strong>real time</strong> every 15
 recorded and and <strong>time stamped</strong> the results. This repo has the time stamped files so
 you can examine the results yourself.
 
-Predictions made in that time <strong>consistently anticipate price</strong>.
-You can animate the change in price vs the change in predictions using the
-"animate_ma" command in run_commands.py.
-
-Results and data analysis are described in <strong>PredictingBitcoin.pdf</strong>.
-
-<strong>Highlights</strong>: the highest performing strategy variant made a <strong>return of 186% </strong> 📈, outperforming Bitcoin by 4%.
-
-If you're interested in volatility, look at <strong>Volatility.pdf</strong> for a follow up.
-
-<strong>Highlights</strong>: Average relative performance divided by average relative standard deviation is
-1.11, implying a <strong>11% higher</strong> return per volatility.
+The primary strategy has made a <strong>return of 176.25%</strong>,
+a <strong>50% higher</strong> return than Bitcoin, with <strong>10% lower volatility.</strong>
 
 If you're skeptical of these results--who doesn't make money in a bull market?--
 read <strong>Backtesting.pdf</strong>, which shows the simulated results for 2018.
@@ -30,8 +20,8 @@ read <strong>Backtesting.pdf</strong>, which shows the simulated results for 201
 and an 11% gain in ETH/USD, in contrast to a market loss of 65% and 80%. That's
 a relative performance of <strong>277%</strong> and <strong>556%</strong> 🤑.
 
-A hindsight best path for the same predictions would have <strong>gained 68% and 56%
-respectively</strong>.
+For more detailed analysis of real time performance up to August 27, read
+<strong>PredictingBitcoin.pdf</strong>.
 
 To get a feel for how we came to this data--our methodology--read
 <strong>TechnicalPresentation.pdf</strong>. It has a more in depth look at the techniques
