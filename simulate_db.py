@@ -94,4 +94,4 @@ def simulate(preds, times, price, buy_thresh = 1, sell_thresh = 0, buy_price = 0
     if not is_invested:
         buy_price = sell_price
 
-    return buy_price, wallet, is_invested, lt, is_invested_array, moving_wallets, adjusted_preds, expected_prices
+    return buy_price, wallet, is_invested, lt, is_invested_array, moving_wallets, [], expected_prices
