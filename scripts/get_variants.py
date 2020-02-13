@@ -18,6 +18,7 @@ from datetime import datetime, timedelta
 
 VARIANT_PATH = "/home/ec2-user/Birdcoin/data/db/variants/"
 ALT_VARIANT_PATH = "/home/ec2-user/Birdcoin/data/variants/"
+ALT_ALT_VARIANT_PATH = "/ec2-user/Birdcoin/data/variants/"
 
 LOCAL_VARIANTS_PATH = './variants/'
 
@@ -59,13 +60,20 @@ def get_complete_variant(type, name, index_string, start_date = "2_9_2019", date
 
     frames = []
 
-    ec2_path = ALT_VARIANT_PATH
+    ec2_path = ALT_ALT_VARIANT_PATH
 
     while date_string != start_date:
     #not inclusive of start date
 
         date = subtract_day(date)
+
+        if date > datetime(2020, 1, 31):
+            continue
+            
         date_string = date.strftime("%-m_%-d_%Y")
+
+        if date_string == "10_23_2019":
+            ec2_path = ALT_VARIANT_PATH
 
         if date_string == "3_13_2019":
             ec2_path = VARIANT_PATH

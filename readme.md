@@ -6,12 +6,12 @@ TradeBot is a two tiered system to
 1. <strong>predict</strong> the direction Bitcoin prices will go in the future and
 2. <strong>trade</strong> on those predictions for profit.
 
-Since February 11, we've made predictions in <strong>real time</strong> every 15 minutes,
-recorded and and <strong>time stamped</strong> the results. This repo has the time stamped files so
-you can examine the results yourself.
+From 2/11/2019 to 1/31/2020, we've made predictions in <strong>real time</strong> every 15 minutes,
+recorded and and <strong>time stamped</strong> the results on the Bitcoin blockchain.
+This repo has the time stamped files so you can examine the results yourself.
 
-The primary strategy has made a <strong>return of 176.25%</strong>,
-a <strong>50% higher</strong> return than Bitcoin, with <strong>10% lower volatility.</strong>
+The primary strategy has made a <strong>return of 188%</strong>,
+a <strong>9% higher</strong> return than Bitcoin.
 
 If you're skeptical of these results--who doesn't make money in a bull market?--
 we performed walk forward tests for Bitcoin and Ether for the year 2018,
@@ -59,6 +59,9 @@ All OTS files/zips containing predictions are in /stamps; the unzipped CSVs are
 in /variants, for your convenience.
 
 Stamp Erratum:
+Note: Around 1/31/2020, TradeBot began to suffer infrastructure issues that led to performance
+degradation and made the data unusable, which is why we halt there. The data is left available
+for verification.
 For June 3, there is no timestamp;
 June 21 has a stamp that is improperly named as June 22;
 and June 22 is stamped around 12 hours later than it should be.
