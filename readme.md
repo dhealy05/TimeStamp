@@ -42,7 +42,7 @@ To easily use this package, you will probably need to:
 
 It may work by default if you have an existing python environment.
 
-The basic suite of commands is in run_commands.py. This includes simulating
+The basic suite of commands is in run.py. This includes simulating
 all variants based on 1/0 buy/sell values, and plotting/animating the moving
 average of the predictions.
 
@@ -50,7 +50,7 @@ Uncomment "adjust_arrays" in plot_moving_average.py in order to see the
 predictions shifted to the right. This has been a useful way to visualize future
 price change for the 10 day MA.
 
-Note on the "translator" function in run_commands: the original names for the
+Note on the "translator" function in run: the original names for the
 strategy variants are confusing and don't match those used in the write up,
 which are superior. So, the translator functions translate the time stamped
 file names into the more understandable and accurate ones used in the paper.

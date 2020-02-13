@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, './scripts')
+
 import simulate_variants
 import plot_moving_average
 
@@ -31,9 +34,9 @@ def variant_translator(average, partition):
         elif partition == "long_term":
             return "readjusted_median_index_7"
 
-simulate_variants.simulate_variant("readjusted_average", "index")
+#simulate_variants.simulate_variant("readjusted_average", "index")
 #simulate_variants.simulate_all_variants()
 
-#plot_moving_average.plot_ma(index_translator('normal'), variant_translator(True, 'full_set'), ma_frames = int(96*10), days_offset = 0)
+plot_moving_average.plot_ma(index_translator('raw'), variant_translator(True, 'full_set'), ma_frames = int(96*50), days_offset = 0, adjust = 12)
 
 #plot_moving_average.animate_ma(index_translator('raw'), variant_translator(True, 'short_term'), ma_frames = int(96*10))

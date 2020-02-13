@@ -38,35 +38,51 @@ def animate_ma(index_string, variant = '', ma_frames = 96*10, days_offset = 0, m
 ###charts/plots#####
 ####################
 
-def plot_ma(index_string, variant = '', ma_frames = 96*10, days_offset = 0, median = False):
+def plot_ma(index_string, variant = '', ma_frames = 96*10, days_offset = 0, median = False, adjust = 0):
 
     df = get_variants.get_complete_variant("BTC", variant, index_string)
     comparison, times, prices = df['index'].values, df['times'].values, df['price'].values
 
-    mas = get_ma(comparison, ma_frames, median)
-    #mas, prices, sentinel = adjust_arrays(mas, prices, ma_frames)
+    pretty_print = True
 
-    total_offset = days_offset * 96
+    if not pretty_print:
 
-    if total_offset > len(prices):
-        days_offset = 0
+        mas = get_ma(comparison, ma_frames, median) ##comment for one pager
 
-    if days_offset > 0:
-        prices = prices[0:len(prices)-total_offset]
-        mas = mas[0:len(mas)-total_offset]
+        total_offset = days_offset * 96
 
-    mas = normalize(mas, max(prices), min(prices))
-    #prices = normalize(prices)
+        if total_offset > len(prices):
+            days_offset = 0
 
-    #price_mas = get_ma(prices, ma_frames, median)
-    #prices_ma = price_mas[ma_frames:len(price_mas)]
-    #plt.plot(normalize(price_mas))
+        if days_offset > 0:
+            prices = prices[0:len(prices)-total_offset]
+            mas = mas[0:len(mas)-total_offset]
+            times = times[0:len(mas)-total_offset]
+
+        print(mas[len(mas)-1])
+        print(comparison[len(comparison)-1])
+
+        mas = normalize(mas, max(prices), min(prices))
+        prices = prices[adjust*96:len(prices)]
+
+    else:
+
+        mas = get_ma(comparison, ma_frames, median)
+
+        print(mas[len(mas)-1])
+        print(comparison[len(comparison)-1])
+
+        mas = mas[ma_frames:len(mas)-1]
+        prices = prices[ma_frames:len(prices)-1]
+
+        prices = prices[adjust*96:len(prices)]
+
+        mas = normalize(mas, max(prices), min(prices))
 
     plt.plot(mas)
     plt.plot(prices)
 
     plt.show()
-
 
 def adjust_arrays(mas, prices, ma_frames):
 
