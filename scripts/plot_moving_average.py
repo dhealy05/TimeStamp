@@ -13,6 +13,7 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import scipy.stats as stats
 
 from datetime import datetime
 
@@ -79,9 +80,14 @@ def plot_ma(index_string, variant = '', ma_frames = 96*10, days_offset = 0, medi
 
         mas = normalize(mas, max(prices), min(prices))
 
-    plt.plot(mas)
-    plt.plot(prices)
+    plt.plot(mas, label='Predicted Price')
+    plt.plot(prices, label='Actual Price')
 
+    plt.xlabel('4/2/2019 - 1/15/2020')
+    plt.ylabel('Returns')
+    plt.title('Predicted Price vs Actual Price')
+
+    plt.legend()
     plt.show()
 
 def adjust_arrays(mas, prices, ma_frames):
@@ -91,6 +97,55 @@ def adjust_arrays(mas, prices, ma_frames):
     prices = prices[sentinel:len(prices)]
 
     return mas, prices, sentinel
+
+##############################
+###correlate/scatterplot######
+##############################
+
+def correlate_ma(index_string, variant = '', ma_frames = 96*10, days_offset = 0, median = False, adjust = 0):
+
+    df = get_variants.get_complete_variant("BTC", variant, index_string)
+    comparison, times, prices = df['index'].values, df['times'].values, df['price'].values
+
+    i=ma_frames
+
+    mas = get_ma(comparison, i, median)
+    mas = normalize(mas, max(prices), min(prices))
+
+    mas = mas[i:len(mas)-1]
+    new_prices = prices[i:len(prices)-1]
+
+    mas = mas[0:len(mas)-adjust*96]
+    new_prices = new_prices[adjust*96:len(prices)]
+
+    slope, intercept, r_value, p_value, std_err = stats.linregress(mas, new_prices)
+    rsq=r_value*r_value
+    print(rsq)
+
+    #r=stats.spearmanr(mas, new_prices)[0]
+    #print(r*r)
+
+    make_scatter(mas, new_prices)
+
+def make_scatter(x, y, j = 0):
+
+    #predicted, actual
+
+    fig, ax = plt.subplots()
+
+    ax.scatter(x, y, s = 1, c = 'blue', rasterized=True)
+
+    m, b = np.polyfit(x, y, deg = 1)
+    x0, x1 = ax.get_xlim()
+    y0, y1 = m*x0+b, m*x1+b
+    ax.plot([x0, x1], [y0, y1], c = 'black')
+
+    plt.xlabel('Predicted Price')
+    plt.ylabel('Actual Price')
+    #Apr 2 is 50 days (default MA length) after set begins
+    plt.title('Price vs Prediction, Apr 2 - Jan 15, R^2=.78')
+
+    plt.show()
 
 ####################
 ######animate#######

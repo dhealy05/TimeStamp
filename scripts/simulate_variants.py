@@ -18,6 +18,7 @@ import numpy as np
 from datetime import datetime
 
 import analyze_simulation
+import analyze_volatility
 import get_variants
 import simulate_db
 
@@ -55,6 +56,8 @@ def simulate_variant(name, string):
     print("Market: " + str(market))
 
     print("Wallet/Market: " + str(wallet/market))
+
+    analyze_volatility.get_metrics(mw, df['price'].values)
 
     return lt, df['price'].values, df['times'].values
 

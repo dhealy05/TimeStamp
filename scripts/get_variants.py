@@ -67,9 +67,9 @@ def get_complete_variant(type, name, index_string, start_date = "2_9_2019", date
 
         date = subtract_day(date)
 
-        if date > datetime(2020, 1, 31):
+        if date > datetime(2020, 1, 15):
             continue
-            
+
         date_string = date.strftime("%-m_%-d_%Y")
 
         if date_string == "10_23_2019":
