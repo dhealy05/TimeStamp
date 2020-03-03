@@ -11,7 +11,7 @@ recorded and and <strong>time stamped</strong> the results on the Bitcoin blockc
 This repo has the time stamped files so you can examine the results yourself.
 
 The primary strategy has made a <strong>return of 188%</strong>,
-a <strong>9% higher</strong> return than Bitcoin.
+a <strong>30% higher</strong> return than Bitcoin.
 
 If you're skeptical of these results--who doesn't make money in a bull market?--
 we performed walk forward tests for Bitcoin and Ether for the year 2018,
